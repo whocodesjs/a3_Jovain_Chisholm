@@ -76,6 +76,13 @@ function App() {
     }
   };
 
+  const tossCard = () => {
+    if (selectedCard === null) return;
+    const newCards = drawnCards.filter((_, i) => i !== selectedCard);
+    setDrawnCards(newCards);
+    setSelectedCard(null);
+  };
+
   return (
     <div className="App">
       <h1>Card Deck</h1>
