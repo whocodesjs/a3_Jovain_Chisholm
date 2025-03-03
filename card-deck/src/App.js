@@ -83,6 +83,11 @@ function App() {
     setSelectedCard(null);
   };
 
+  const regroup = () => {
+    const shuffled = [...drawnCards].sort(() => Math.random() - 0.5);
+    setDrawnCards(shuffled);
+  };
+
   return (
     <div className="App">
       <h1>Card Deck</h1>
