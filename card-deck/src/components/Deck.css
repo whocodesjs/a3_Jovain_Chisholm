@@ -1,0 +1,42 @@
+.deck-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.25rem 0;
+}
+
+.deck {
+  width: 7.5rem;
+  height: 10.625rem;
+  background: linear-gradient(45deg, #2197f3, #1976d2);
+  border: 0.125rem solid #333;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.deck:hover {
+  transform: translateY(-0.3rem);
+}
+
+.deck-back {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.empty-deck {
+  width: 7.5rem;
+  height: 10.625rem;
+  background: #f0f0f0;
+  border: 0.125rem dashed #666;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-style: italic;
+}
