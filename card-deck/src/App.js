@@ -88,6 +88,14 @@ function App() {
     setDrawnCards(shuffled);
   };
 
+  const addWildCard = () => {
+    const newCard = {
+      suit: suits[Math.floor(Math.random() * suits.length)],
+      value: values[Math.floor(Math.random() * values.length)],
+    };
+    setDrawnCards([...drawnCards, newCard]);
+  };
+
   return (
     <div className="App">
       <h1>Card Deck</h1>
