@@ -40,6 +40,20 @@ function App() {
     setDrawnCards([...drawnCards, card]);
   };
 
+  const dealCards = (count) => {
+    const newDeck = [...deck, ...drawnCards];
+    setDrawnCards([]);
+    setSelectedCard(null);
+    const newDrawnCards = [];
+    for (let i = 0; i < count && newDeck.length > 0; i++) {
+      const randomIndex = Math.floor(Math.random() * newDeck.length);
+      newDrawnCards.push(newDeck[randomIndex]);
+      newDeck.splice(randomIndex, 1);
+    }
+    setDeck(newDeck);
+    setDrawnCards(newDrawnCards);
+  };
+
   const handleCardClick = (i) => {
     if (selectedCard === null) {
       setSelectedCard(i);
