@@ -54,6 +54,12 @@ function App() {
     setDrawnCards(newDrawnCards);
   };
 
+  const reset = () => {
+    setDeck(createDeck());
+    setDrawnCards([]);
+    setSelectedCard(null);
+  };
+
   const handleCardClick = (i) => {
     if (selectedCard === null) {
       setSelectedCard(i);
