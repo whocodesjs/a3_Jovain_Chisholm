@@ -2,11 +2,12 @@
   display: flex;
   justify-content: center;
   margin: 1.25rem 0;
+  width: 100%;
 }
 
 .deck {
-  width: 8.75vw;
-  height: 24vh;
+  width: clamp(70px, 8.75vw, 120px);
+  height: clamp(120px, 24vh, 180px);
   background: linear-gradient(45deg, #2197f3, #1976d2);
   border: 0.125rem solid #333;
   border-radius: 0.625rem;
@@ -24,13 +25,15 @@
 
 .deck-back {
   color: white;
-  font-size: 1.75rem;
+  font-size: clamp(1rem, 3vw, 1.75rem);
   font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
 }
 
 .empty-deck {
-  width: 8.75vw;
-  height: 24vh;
+  width: clamp(70px, 8.75vw, 120px);
+  height: clamp(120px, 24vh, 180px);
   background: white;
   border: 0.125rem solid #333;
   border-radius: 0.625rem;
@@ -38,6 +41,24 @@
   align-items: center;
   justify-content: center;
   color: #666;
-  font-size: 1.25rem;
+  font-size: clamp(0.8rem, 2vw, 1.25rem);
   font-style: italic;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .deck,
+  .empty-deck {
+    width: clamp(60px, 15vw, 90px);
+    height: clamp(90px, 22vh, 150px);
+  }
+}
+
+@media (max-width: 480px) {
+  .deck,
+  .empty-deck {
+    width: clamp(50px, 18vw, 70px);
+    height: clamp(70px, 20vh, 120px);
+  }
 }

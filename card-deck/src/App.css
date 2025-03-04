@@ -16,6 +16,7 @@ h1 {
 
 .controls {
   display: flex;
+  flex-wrap: wrap;
   gap: clamp(0.3rem, 1vw, 0.625rem);
   justify-content: center;
   margin: clamp(0.5rem, 2vh, 1.25rem) 0;

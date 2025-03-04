@@ -1,6 +1,6 @@
 .card {
-  width: 9.25vw;
-  height: 24.5vh;
+  width: clamp(60px, 9.25vw, 120px);
+  height: clamp(120px, 24.5vh, 180px);
   background: white;
   border: 0.125rem solid #ccc;
   border-radius: 0.625rem;
@@ -9,6 +9,7 @@
   cursor: pointer;
   transition: transform 0.2s;
   overflow: hidden;
+  margin: 0.25rem;
 }
 
 .card:hover {
@@ -25,8 +26,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.9rem;
-  font-size: 1.75rem;
+  padding: clamp(0.4rem, 2vw, 0.9rem);
+  font-size: clamp(1rem, 3vw, 1.75rem);
   font-weight: bold;
   box-sizing: border-box;
 }
@@ -37,7 +38,7 @@
 }
 
 .card-center {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   text-align: center;
   flex-grow: 0;
   line-height: 1;
@@ -48,4 +49,22 @@
   transform: rotate(180deg);
   line-height: 1;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: clamp(50px, 15vw, 90px);
+    height: clamp(90px, 22vh, 150px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: clamp(40px, 18vw, 70px);
+    height: clamp(70px, 20vh, 120px);
+  }
+
+  .card-content {
+    padding: 0.3rem;
+  }
 }

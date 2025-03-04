@@ -3,9 +3,13 @@ import "./Card.css";
 
 const Card = ({ suit, value, isPicked, onClick }) => {
   const suitColor = suit === "♥" || suit === "♦" ? "red" : "black";
+  const isSmallScreen = window.innerWidth <= 480;
 
   return (
-    <div className={`card ${isPicked ? "picked" : ""}`} onClick={onClick}>
+    <div
+      className={`card ${isPicked ? "picked" : ""}`}
+      onClick={onClick}
+      aria-label={`${value} of ${suit}`}>
       <div className="card-content" style={{ color: suitColor }}>
         <div className="card-top">
           {value}
