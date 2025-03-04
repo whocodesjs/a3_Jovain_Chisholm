@@ -9,7 +9,7 @@ const Deck = ({ cardsRemaining, onclick }) => {
           <div className="deck-back">Deck ({cardsRemaining})</div>
         </div>
       ) : (
-        <div className="deck-empty">No cards remaining.</div>
+        <div className="empty-deck">No cards remaining.</div>
       )}
     </div>
   );
