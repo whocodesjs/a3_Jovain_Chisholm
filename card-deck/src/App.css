@@ -1,31 +1,37 @@
 .App {
   text-align: center;
+  width: 100%;
   max-width: 84vw;
   margin: 0 auto;
-  padding: 1.25rem;
+  padding: clamp(0.5rem, 2vw, 1.25rem);
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
 h1 {
   color: #333;
-  font-size: 8rem;
+  font-size: clamp(2rem, 8vw, 5rem);
+  margin: clamp(0.5rem, 2vh, 1.5rem) 0;
 }
 
 .controls {
   display: flex;
-  gap: 0.625rem;
+  gap: clamp(0.3rem, 1vw, 0.625rem);
   justify-content: center;
-  margin: 1.25rem 0;
+  margin: clamp(0.5rem, 2vh, 1.25rem) 0;
 }
 
 button {
-  padding: 1.125rem 3.25rem;
+  padding: clamp(0.5rem, 2vw, 1.125rem) clamp(1rem, 3vw, 3.25rem);
   border: none;
   border-radius: 0.3rem;
   background-color: #4caf50;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  margin: 0.25rem;
+  flex: 0 1 auto;
 }
 
 button:hover {
@@ -40,7 +46,31 @@ button:disabled {
 .drawn-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.125rem;
+  gap: clamp(0.5rem, 1vw, 1.125rem);
   justify-content: center;
-  margin-top: 1.25rem;
+  margin-top: clamp(0.5rem, 2vh, 1.25rem);
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  button {
+    flex: 0 1 calc(33.33% - 1rem);
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls {
+    flex-direction: row;
+  }
+
+  button {
+    flex: 0 1 calc(50% - 0.5rem);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
 }
