@@ -1,12 +1,14 @@
 .card {
-  width: 7vw;
-  height: 10.5vw;
+  width: 9.25vw;
+  height: 24.5vh;
   background: white;
   border: 0.125rem solid #ccc;
-  border-radius: 0.5rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
   position: relative;
   cursor: pointer;
   transition: transform 0.2s;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -19,24 +21,31 @@
 
 .card-content {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.625rem;
-  font-size: 1.25rem;
+  padding: 0.9rem;
+  font-size: 1.75rem;
   font-weight: bold;
+  box-sizing: border-box;
 }
 
 .card-top {
   text-align: left;
+  line-height: 1;
 }
 
 .card-center {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   text-align: center;
+  flex-grow: 0;
+  line-height: 1;
 }
 
 .card-bottom {
-  text-align: right;
+  text-align: left;
   transform: rotate(180deg);
+  line-height: 1;
+  position: relative;
 }
